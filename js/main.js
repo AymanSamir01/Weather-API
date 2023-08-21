@@ -17,7 +17,7 @@ countryValue.addEventListener("keyup", function () {
 
 function displayData() {
   const { name } = data.location;
-  const { temp_c, wind_kph, wind_dir } = data.current;
+  const { temp_c, wind_kph, wind_dir, humidity } = data.current;
   const { icon, text } = data.forecast.forecastday[0].day.condition;
   let container = `
 <div class="item text-white">
@@ -35,7 +35,7 @@ function displayData() {
     </div>
     <div class="airStatus">${text}</div>
     <span class="me-3"><img src="images/icon-umberella.png" class="pe-2 d-inline-block"
-            alt="">20%</span>
+            alt="">${humidity}%</span>
     <span class="me-3"><img src="images/icon-wind.png" class="pe-2 d-inline-block"
             alt="">${wind_kph} km/h</span>
     <span><img src="images/icon-compass.png" class="pe-2 d-inline-block" alt="">${wind_dir}</span>
